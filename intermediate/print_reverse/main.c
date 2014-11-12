@@ -44,19 +44,19 @@ list *reverseList(list *fwdList) {
 	list *revList = malloc(sizeof(list));
 
 	node *temp;
-    node *previous = NULL;
-    node *head = fwdList->head;
+	node *previous = NULL;
+	node *head = fwdList->head;
 
-    while(head != NULL) {
-        temp = head->next;
-        head->next = previous;
-        previous = head;
-        head = temp;
-    }
+	while(head != NULL) {
+		temp = head->next;
+		head->next = previous;
+		previous = head;
+		head = temp;
+	}
 
-    revList->head = previous;
+	revList->head = previous;
 
-    return revList;
+	return revList;
 }
 
 int main(int argc, char const *argv[]) {
