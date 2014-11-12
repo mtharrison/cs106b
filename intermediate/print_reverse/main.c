@@ -7,33 +7,33 @@
 
 void printList(list *list) {
 
-	printf("%15s %10s\n", "Address", "Value");
+    printf("%15s %10s\n", "Address", "Value");
 
-	node *curr = list->head;
+    node *curr = list->head;
 
-	while(curr) {
-		printf("%15p %10d\n", (char *) curr, curr->val);		
-		curr = curr->next;
-	}
+    while(curr) {
+        printf("%15p %10d\n", (char *) curr, curr->val);        
+        curr = curr->next;
+    }
 }
 
 // Cleans up memory of list
 
 void destroyList(list *list) {
 
-	node *curr = list->head, * next;
+    node *curr = list->head, * next;
 
-	// Free all nodes
+    // Free all nodes
 
-	while(curr) {
-		next = curr->next;
-		free(curr);
-		curr = next;
-	}
+    while(curr) {
+        next = curr->next;
+        free(curr);
+        curr = next;
+    }
 
-	// Free list
+    // Free list
 
-	free(list);
+    free(list);
 
 }
 
@@ -41,57 +41,57 @@ void destroyList(list *list) {
 
 list *reverseList(list *fwdList) {
 
-	list *revList = malloc(sizeof(list));
+    list *revList = malloc(sizeof(list));
 
-	node *temp;
-	node *previous = NULL;
-	node *head = fwdList->head;
+    node *temp;
+    node *previous = NULL;
+    node *head = fwdList->head;
 
-	while(head != NULL) {
-		temp = head->next;
-		head->next = previous;
-		previous = head;
-		head = temp;
-	}
+    while(head != NULL) {
+        temp = head->next;
+        head->next = previous;
+        previous = head;
+        head = temp;
+    }
 
-	revList->head = previous;
+    revList->head = previous;
 
-	return revList;
+    return revList;
 }
 
 int main(int argc, char const *argv[]) {
 
-	node *head = NULL, * curr = NULL;
+    node *head = NULL, * curr = NULL;
 
-	// Make a new list
+    // Make a new list
 
-	list *linkedList = malloc(sizeof(list));
+    list *linkedList = malloc(sizeof(list));
 
-	// Populate the list
+    // Populate the list
 
-	for (int i = 10; i > 0; --i) 
-	{
-		// Get memory for node
-		node *newNode = malloc(sizeof(node));
-		newNode->val = i;
-		newNode->next = head;
+    for (int i = 10; i > 0; --i) 
+    {
+        // Get memory for node
+        node *newNode = malloc(sizeof(node));
+        newNode->val = i;
+        newNode->next = head;
 
-		head = newNode;
-	}
+        head = newNode;
+    }
 
-	// Add the head to the list struct
+    // Add the head to the list struct
 
-	linkedList->head = head;
+    linkedList->head = head;
 
-	printList(linkedList);
+    printList(linkedList);
 
-	list *revList = reverseList(linkedList);
+    list *revList = reverseList(linkedList);
 
-	printList(revList);
+    printList(revList);
 
-	destroyList(linkedList);
+    destroyList(linkedList);
 
-	free(revList);
+    free(revList);
 
-	return 0;
+    return 0;
 }
