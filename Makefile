@@ -23,6 +23,9 @@ powers: directories
 gcd: directories
 	cc -o build/gcd stanford_recursion/gcd.c
 
+fib: directories
+	cc -o build/fib stanford_recursion/fib.c
+
 # Misc
 
 directories: ${OUT_DIR}
