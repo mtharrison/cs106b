@@ -20,6 +20,9 @@ cannonballs: directories
 powers: directories
 	cc -o build/powers stanford_recursion/powers.c
 
+gcd: directories
+	cc -o build/gcd stanford_recursion/gcd.c
+
 # Misc
 
 directories: ${OUT_DIR}

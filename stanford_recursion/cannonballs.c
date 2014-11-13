@@ -24,13 +24,9 @@
 int Cannonball(int height)
 {
     if(height == 1) 
-    {
         return 1;
-    }
-    else 
-    {
-        return (height * height) + Cannonball(height - 1);
-    }
+    
+    return (height * height) + Cannonball(height - 1);
 }
 
 int main(int argc, char const *argv[])
