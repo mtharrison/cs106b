@@ -7,28 +7,29 @@
 //  1 2 1
 // 1 3 3 1
 
-int 
-pascalsValue(int row, int position)
+typedef struct {
+  int row;
+  int col;
+} pascalPosition;
+
+int pascalsValue(pascalPosition pos)
 {
-  if(
-    position == 1 || 
-    position == row || 
-    row == 1 || 
-    row == 2)
+  if(pos.col == 1 || 
+     pos.col == pos.row)
   {
     return 1;
   }
   else 
   {
-    return pascalsValue(row - 1, position - 1) + 
-           pascalsValue(row - 1, position);
+    return pascalsValue((pascalPosition) {pos.row - 1, pos.col - 1}) + 
+           pascalsValue((pascalPosition) {pos.row - 1, pos.col});
   }
 }
 
-int 
-main(int argc, char const *argv[])
+int main(int argc, char const *argv[])
 {
-    printf("%d\n", pascalsValue(4,2));
-    printf("%d\n", pascalsValue(12,5));
+    printf("%d\n", pascalsValue((pascalPosition) {4,2}));
+    printf("%d\n", pascalsValue((pascalPosition) {12,5}));
+    printf("%d\n", pascalsValue((pascalPosition) {30,12}));
     return 0;
 }
