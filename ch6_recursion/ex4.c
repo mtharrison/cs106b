@@ -15,30 +15,23 @@
 
 int Fib(int n)
 {
-    if(n == 0)
-        return 0;
+    int lastEls[2] = {0, 1};
 
-    if(n == 1)
-        return 1;
-
-    // Make an array big enough to hold entire series with 
-    // first 2 elements set
+    if(n < 2)
+        return lastEls[n];
 
     int curr = 2;
-
-    int series[n + 1];
-    series[0] = 0;
-    series[1] = 1;
-
-    // Build up the series
+    int next;
 
     while(curr <= n)
     {
-        series[curr] = series[curr - 1] + series[curr - 2];
+        next = lastEls[0] + lastEls[1];
+        lastEls[0] = lastEls[1];
+        lastEls[1] = next;
         curr++;
     }
 
-    return series[n];
+    return next;
 }
 
 int main(int argc, char const *argv[])
