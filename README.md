@@ -1,4 +1,4 @@
-cprogrammingchallenges
-======================
+cs106b
+======
 
-Challenge solutions from http://www.cprogramming.com/challenge.html
+Stanford cs106b questions
