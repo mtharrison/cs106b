@@ -15,6 +15,9 @@ ch6_ex3: directories
 ch6_ex4: directories
 	cc -o build/ch6_ex4 ch6_recursion/ex4.c
 
+ch6_ex5: directories
+	cc -o build/ch6_ex5 ch6_recursion/ex5.c
+
 # Misc
 
 directories: ${OUT_DIR}
