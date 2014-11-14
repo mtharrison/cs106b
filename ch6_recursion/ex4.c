@@ -1,5 +1,7 @@
 // Write an iterative implementation of the function Fib(n).
 
+// Recursive version: 
+//
 // int Fib(int n) {
 //     if (n < 2) {
 //         return n;
