@@ -33,4 +33,8 @@ int main(int argc, char const *argv[])
 	assert(DigitalRoot(1729) == 1);
 	assert(DigitalRoot(876876) == 6);
 	assert(DigitalRoot(765876346) == 7);
+
+	puts("All assertions correct - success!");
+
+	return 0;
 }

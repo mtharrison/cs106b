@@ -22,5 +22,7 @@ int main(int argc, char const *argv[])
     assert(DigitSum(1729)  == 19);
     assert(DigitSum(19834) == 25);
 
+    puts("All assertions correct - success!");
+
     return 0;
 }
