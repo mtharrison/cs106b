@@ -1,6 +1,14 @@
 MKDIR_P = mkdir -p
 OUT_DIR = build
 
+# Chapter 1 - Intro
+
+ch1_ex1: directories
+	g++ -o build/ch1_ex1 ch1_intro/ex1.cpp
+
+ch1_ex2: directories
+	g++ -o build/ch1_ex2 ch1_intro/ex2.cpp
+
 # Chapter 6 - Recursion
 
 ch5_ex1: directories
