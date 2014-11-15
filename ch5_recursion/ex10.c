@@ -18,9 +18,16 @@ char strings[10] = {
 
 char* IntegerToString(int i, char *string)
 {
-	*(string) = strings[i % 10];
+	if (string == NULL) {
+		string = malloc(sizeof(char) * MAX_LENGTH);
+		string += MAX_LENGTH - 1;
+		*string = '\0';
+		string--;
+	}
 
-	if(i < 10) {
+	*string = strings[i % 10];
+
+	if (i < 10) {
 		return string;	
 	}
 
@@ -31,15 +38,9 @@ char* IntegerToString(int i, char *string)
 
 int main(int argc, char const *argv[])
 {
-	char string[MAX_LENGTH];
-	string[MAX_LENGTH - 1] = '\0';
 
-	assert(strcmp(IntegerToString(7, &string[MAX_LENGTH - 2]), "7") == 0);
-
-	char string2[MAX_LENGTH];
-	string2[MAX_LENGTH - 1] = '\0';
-
-	assert(strcmp(IntegerToString(7983,&string2[MAX_LENGTH - 1]), "7983") == 0);
+	assert(strcmp(IntegerToString(7, NULL), "7") == 0);
+	assert(strcmp(IntegerToString(7543, NULL), "7543") == 0);
 
 	puts("All assertions correct - success!");
 
