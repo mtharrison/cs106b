@@ -24,8 +24,8 @@ ch5_ex6: directories
 ch5_ex7: directories
 	cc -o build/ch5_ex7 ch5_recursion/ex7.c
 
-ch5_ex9: directories
-	cc -o build/ch5_ex9 ch5_recursion/ex9.c
+ch5_ex10: directories
+	cc -o build/ch5_ex10 ch5_recursion/ex10.c
 
 # Misc
 
