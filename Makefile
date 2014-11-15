@@ -9,6 +9,12 @@ ch1_ex1: directories
 ch1_ex2: directories
 	g++ -o build/ch1_ex2 ch1_intro/ex2.cpp
 
+ch1_ex3: directories
+	g++ -o build/ch1_ex3 ch1_intro/ex3.cpp
+
+ch1_ex4: directories
+	g++ -o build/ch1_ex4 ch1_intro/ex4.cpp
+
 # Chapter 6 - Recursion
 
 ch5_ex1: directories
