@@ -6,22 +6,19 @@
 
 using namespace std;
 
-float CelsiusToFarenheit(float celcius)
-{
-	return (celcius * (9.0/5)) + 32;
-}
-
 int main(int argc, char const *argv[])
 {
-	string input;
+	int input;
+	int highest;
 
-	cout << "Enter a value in celcius:";
+	while(1 == 1) {
+		cin >> input;
 
-	cin >> input;
+		if (input == 0) {
+			break;
+		}
 
-	float value = stof(input);
-
-	cout << CelsiusToFarenheit(value);
+	}
 
 	return 0;
 }
